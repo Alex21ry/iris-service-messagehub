@@ -189,8 +189,12 @@ class WebsocketConnector extends AbstractConnector {
 
 		queue.on('broadcast', ({
 			data,
+			addr = {},
 			event
-		}) => _.forEach(this.io.sockets.connected, (socket) => socket.router && socket.router.parse(event, data)));
+		}) => _.forEach(this.io.sockets.connected, (socket) => {
+			if (socket.router && _.every(_.map(addr, (pval, pkey) => socket[pkey] == pval)))
+				socket.router.parse(event, data)
+		}));
 
 		this.io.on('connection', (socket) => {
 			console.log('Connected!');
