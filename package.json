@@ -29,7 +29,7 @@
 	},
 	"homepage": "https://github.com/sdk-group/iris-service-messagehub#readme",
 	"devDependencies": {
-		"Couchbird": "git+https://github.com/YuuKohaku/Couchbird.git",
+		"Couchbird": "git+https://github.com/YuuKohaku/Couchbird.git#get-multi-workers",
 
 		"babel-plugin-transform-remove-console": "^6.8.0",
 		"babel-plugin-transform-strict-mode": "^6.8.0",
