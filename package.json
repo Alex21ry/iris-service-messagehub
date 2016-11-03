@@ -61,6 +61,7 @@
 		"express": "^4.14.0",
 		"finalhandler": "^0.5.0",
 		"global-queue": "git+https://github.com/artificial-life/global-queue.git#experiments",
+		"iris-builder": "git+https://github.com/sdk-group/iris-builder.git",
 		"iris-auth-util": "git+https://github.com/sdk-group/iris-auth-util.git",
 		"lodash": "^4.16.1",
 		"router": "^1.1.4",

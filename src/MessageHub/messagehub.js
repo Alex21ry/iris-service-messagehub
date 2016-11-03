@@ -13,7 +13,7 @@ let performTask = function (destination, data) {
 			}
 		})
 		.catch((err) => {
-			console.log("MH ERR!", err.stack);
+			console.log("MH ERR!", err.message == 'Warmup.' ? err.message : err.stack);
 			global.logger && logger.error(err, 'Error transformed to state:false in MessageHub');
 
 			return {
