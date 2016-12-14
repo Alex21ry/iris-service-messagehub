@@ -115,12 +115,13 @@ class HttpRest extends AbstractConnector {
 
 		router.route("/cache/flush")
 			.get(function (req, res, next) {
+				console.log(req.query);
 				if (req.query.local)
-					global.message_bus && message_bus.emit('inmemory-cache.flush', req.query);
+					global.message_bus && message_bus.command('inmemory-cache.flush', req.query);
 				if (req.query.index)
-					global.message_bus && message_bus.emit('ticket-index.flush', req.query);
+					global.message_bus && message_bus.command('ticket-index.reload', req.query);
 				if (req.query.stats)
-					global.message_bus && message_bus.emit('inmemory-stats.flush', req.query);
+					global.message_bus && message_bus.command('inmemory-stats.flush', req.query);
 
 				res.send({
 					success: true
